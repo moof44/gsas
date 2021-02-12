@@ -1,9 +1,21 @@
 .sidenav-container {
   height: 100%;
+  position: absolute;
+  top: 60px;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+}
+
+.main-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 .sidenav {
-  width: 200px;
+  width: 130px;
 }
 
 .sidenav .mat-toolbar {
@@ -14,4 +26,13 @@
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+.img-logo{
+  height: 60px;
+  width: 60px;
+}
+
+.header-menu{
+  
 }
