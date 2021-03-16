@@ -1,3 +1,5 @@
+@import '../../config-theme';
+
 .sidenav-drawer{
     height: 100%;
     .lef-side-drawer{
@@ -14,4 +16,13 @@
     .left-sidenav{
         width:50px;
     }
+    
+}
+
+.route-active{
+    background-color: $accent;
+}
+
+.main-container{
+    padding: 10px;
 }

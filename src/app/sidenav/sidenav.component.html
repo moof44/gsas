@@ -1,25 +1,46 @@
 <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav mode="side" opened role="navigation" class="left-sidenav">
+    <mat-sidenav 
+        mode="side" 
+        opened role="navigation" 
+        class="left-sidenav"
+        [@showNavbar]="isShowNavbar? 'open' : 'closed'"
+        (mouseenter)="openSidenav(true)"
+        (mouseleave)="openSidenav(false)"
+        >
         <mat-list role="list">
             <mat-nav-list role="listitem">
-                <a mat-list-item >
-                    <mat-icon aria-hidden="false" aria-label="Example home icon">monetization_on</mat-icon>
-                    <span>Billing</span>
+                <a mat-list-item routerLink="/clients" routerLinkActive="route-active" >
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">account_circle</mat-icon>
+                    <span *ngIf="isShowNavbar">Client</span>
                 </a>
             </mat-nav-list>
             <mat-nav-list role="listitem">
                 <a mat-list-item >
                     <mat-icon aria-hidden="false" aria-label="Example home icon">text_snippet</mat-icon>
-                    <span>Filing</span>
+                    <span *ngIf="isShowNavbar">Accounting</span>
                 </a>
             </mat-nav-list>
             <mat-nav-list role="listitem">
                 <a mat-list-item >
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">monetization_on</mat-icon>
+                    <span *ngIf="isShowNavbar">Taxes</span>
+                </a>
+            </mat-nav-list>
+            <mat-nav-list role="listitem"> 
+                <a mat-list-item >
+                    <mat-icon aria-hidden="false" aria-label="Example home icon">sell</mat-icon>
+                    <span *ngIf="isShowNavbar">Billing</span>
+                </a>
+            </mat-nav-list>
+            <mat-nav-list role="listitem"> 
+                <a mat-list-item >
                     <mat-icon aria-hidden="false" aria-label="Example home icon">work</mat-icon>
-                    <span>Task</span>
+                    <span *ngIf="isShowNavbar">Tasks</span>
                 </a>
             </mat-nav-list>
         </mat-list>
     </mat-sidenav>
-    <mat-sidenav-content role="main">Main content</mat-sidenav-content>
+    <mat-sidenav-content role="main" fxLayout="row" class="main-container">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
 </mat-sidenav-container>
