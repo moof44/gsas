@@ -6,10 +6,12 @@ import { ClientsComponent } from './clients.component';
 import { ClientDatatableComponent } from './tools/client-datatable/client-datatable.component';
 import { ClientMaterialModule } from './modules/client-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ClientProfileComponent } from './tools/client-profile/client-profile.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
-  declarations: [ClientsComponent, ClientDatatableComponent],
+  declarations: [ClientsComponent, ClientDatatableComponent, ClientProfileComponent, HomeComponent],
   imports: [
     CommonModule,
     ClientsRoutingModule,
