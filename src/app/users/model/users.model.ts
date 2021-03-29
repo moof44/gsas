@@ -1,0 +1,20 @@
+export interface Users {
+    employeeId: string,
+    lastName: string,
+    firstName: string,
+    middleName: string,
+    position: string,
+    address: string,
+    privileges: string[],
+    contact1: string,
+    contact2: string,
+    contact3: string,
+    email: string,
+    tinNo: string,
+    sssNo: string,
+    philhealthNo: string,
+    pagibigNo: string,
+    emergencyPersonnel: string,
+    emergencyPersonnelContact: string,
+    password: string
+}

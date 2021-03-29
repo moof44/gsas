@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'main', component: MainmenuComponent },
   { path: 'clients', loadChildren: () => import('./clients/clients.module').then(m => m.ClientsModule) },
+  { path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule) },
 ];
 
 @NgModule({
