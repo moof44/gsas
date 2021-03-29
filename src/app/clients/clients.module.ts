@@ -7,11 +7,22 @@ import { ClientDatatableComponent } from './tools/client-datatable/client-datata
 import { ClientMaterialModule } from './modules/client-material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ClientProfileComponent } from './tools/client-profile/client-profile.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './pages/home/home.component';
+import { CreateComponent } from './pages/create/create.component';
+import { ClientEmployeesTableComponent } from './tools/client-employees-table/client-employees-table.component';
+import { ClientEmployeesProfileComponent } from './tools/client-employees-profile/client-employees-profile.component';
 
 
 @NgModule({
-  declarations: [ClientsComponent, ClientDatatableComponent, ClientProfileComponent, HomeComponent],
+  declarations: [
+    ClientsComponent, 
+    ClientDatatableComponent, 
+    ClientProfileComponent, 
+    HomeComponent, 
+    CreateComponent, 
+    ClientEmployeesTableComponent, 
+    ClientEmployeesProfileComponent
+  ],
   imports: [
     CommonModule,
     ClientsRoutingModule,

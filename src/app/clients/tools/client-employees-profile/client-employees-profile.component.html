@@ -1,0 +1,58 @@
+<mat-card>
+    <mat-card-title>Employees Profile</mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content fxLayout="column" fxLayoutGap="3em" class="card-container">
+        <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutGap="3em">
+            <div fxLayout="column" style="width: 100%;">
+                <mat-form-field appearance="fill">
+                    <mat-label>TIN No.</mat-label>
+                    <input matInput placeholder="###-###-###-###">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Lastname, Firstname, Middlename">
+                    <mat-hint>Note: Must follow convention; Surname, Firstname, Middlename - separated by comma (,)</mat-hint>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Address</mat-label>
+                    <input matInput placeholder="Input full address">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Contact No.</mat-label>
+                    <input matInput placeholder="Input cellphone/landline number">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input input="email" matInput placeholder="ex: email@email.com">
+                </mat-form-field>
+            </div>
+            <div fxLayout="column" style="width: 100%;">
+                <mat-form-field appearance="fill">
+                    <mat-label>SSS No.</mat-label>
+                    <input matInput placeholder="Input SSS no.">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Philhealth No.</mat-label>
+                    <input matInput placeholder="Input Philhealth No.">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Pag-ibig No.</mat-label>
+                    <input matInput placeholder="Input Pag-ibig No.">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Employement Date</mat-label>
+                    <input matInput placeholder="Input employment date">
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Active</mat-label>
+                    <mat-select>
+                        <mat-option value="true">Yes</mat-option> 
+                        <mat-option value="false">No</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

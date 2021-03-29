@@ -1,0 +1,45 @@
+<mat-card>
+    <mat-card-title>Employees</mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content fxLayout="column" fxLayoutGap="3em" class="card-container">
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="tin">
+                <mat-header-cell *matHeaderCellDef> TIN No. </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.tin}} </mat-cell>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="philhealthNo">
+                <mat-header-cell *matHeaderCellDef> Philhealth No. </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.philhealthNo}} </mat-cell>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="sssNo">
+                <mat-header-cell *matHeaderCellDef> SSS No. </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.sssNo}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="pagibigNo">
+                <mat-header-cell *matHeaderCellDef> Pag-ibig No. </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.pagibigNo}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="isActive">
+                <mat-header-cell *matHeaderCellDef> Active </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.isActive}} </mat-cell>
+              </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </mat-card-content>
+</mat-card>
