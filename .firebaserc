@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "nabi-devt-server": {
+      "hosting": {
+        "gsas": [
+          "nabi-devt-server"
+        ]
+      }
+    }
+  }
+}

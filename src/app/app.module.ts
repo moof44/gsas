@@ -12,6 +12,7 @@ import { MainmenuComponent } from './main/mainmenu/mainmenu.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeaderComponent } from './main/tools/header/header.component';
 import { SidenavComponent } from './main/tools/sidenav/sidenav.component';
+import { AuthenticationService } from './service/authentication.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { SidenavComponent } from './main/tools/sidenav/sidenav.component';
     MaterialModule,
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
