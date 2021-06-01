@@ -12,6 +12,10 @@ import { MainmenuComponent } from './main/mainmenu/mainmenu.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeaderComponent } from './main/tools/header/header.component';
 import { SidenavComponent } from './main/tools/sidenav/sidenav.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +30,9 @@ import { SidenavComponent } from './main/tools/sidenav/sidenav.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AngularFireModule.initializeApp(environment),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
