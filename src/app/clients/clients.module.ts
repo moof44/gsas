@@ -11,6 +11,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { CreateComponent } from './pages/create/create.component';
 import { ClientEmployeesTableComponent } from './tools/client-employees-table/client-employees-table.component';
 import { ClientEmployeesProfileComponent } from './tools/client-employees-profile/client-employees-profile.component';
+import { AddClientComponent } from './tools/minor-tools/add-client/add-client.component';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { ClientEmployeesProfileComponent } from './tools/client-employees-profil
     HomeComponent, 
     CreateComponent, 
     ClientEmployeesTableComponent, 
-    ClientEmployeesProfileComponent
+    ClientEmployeesProfileComponent, AddClientComponent
   ],
   imports: [
     CommonModule,

@@ -5,15 +5,17 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
     exports:[
-        MatTableModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatCardModule,
-        MatDividerModule,
-        MatSelectModule
+        MatTableModule
+        ,MatFormFieldModule
+        ,MatInputModule
+        ,MatCardModule
+        ,MatDividerModule
+        ,MatSelectModule
+        ,MatButtonModule
     ],
 })
 export class ClientMaterialModule{
