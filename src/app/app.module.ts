@@ -15,6 +15,7 @@ import { SidenavComponent } from './main/tools/sidenav/sidenav.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -31,8 +32,10 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    AngularFireModule.initializeApp(environment),
-    AngularFirestoreModule
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

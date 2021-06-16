@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   firebase: {
+    /*apiKey: "AIzaSyD3LVJ1Im71UoLgoT-cKsrNyG6S-YOLOcc",*/
     apiKey: "AIzaSyD3LVJ1Im71UoLgoT-cKsrNyG6S-YOLOcc",
     authDomain: "nabi-devt-server.firebaseapp.com",
     databaseURL: "https://nabi-devt-server.firebaseio.com",

@@ -1,4 +1,7 @@
 <mat-toolbar class="header-toolbar" color="primary" fxLayout="row">
     <img src="../../assets/images/gsas-logo.png" >
     <h1>Good Samaritan Bookkeeping Services</h1>
+    <div style="width:100%;" fxLayout="column">
+        <button *ngIf="isAuth" mat-button (click)="logout()" fxFlexAlign="end">Logout</button>
+    </div>
 </mat-toolbar>
