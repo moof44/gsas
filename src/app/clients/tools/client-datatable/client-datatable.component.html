@@ -2,9 +2,10 @@
   <mat-form-field class=""> 
     <mat-label>Filter</mat-label>
     <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    <button mat-button fxFlexAlign="end">Add Client</button>
   </mat-form-field>
   <div style="width:100%;" fxLayout="column" class="">
-    <button mat-button fxFlexAlign="end">Add Client</button>
+    
   </div>
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width:100%">

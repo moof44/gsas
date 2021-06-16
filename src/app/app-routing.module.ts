@@ -8,8 +8,8 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   //{ path: 'login', component: LoginComponent },
   { path: 'main', component: MainmenuComponent },
-  { path: 'clients', loadChildren: () => import('./clients/clients.module').then(m => m.ClientsModule), canLoad:[AuthGuard], canActivate:[AuthGuard]/*, canActivateChild:[AuthGuard]*/}, // commenting this atm while coding
-  { path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule), canLoad:[AuthGuard], canActivate:[AuthGuard]/*, canActivateChild:[AuthGuard]*/},
+  { path: 'clients', loadChildren: () => import('./clients/clients.module').then(m => m.ClientsModule)/*, canLoad:[AuthGuard], canActivate:[AuthGuard], canActivateChild:[AuthGuard]*/}, // commenting this atm while coding
+  { path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule)/*, canLoad:[AuthGuard], canActivate:[AuthGuard], canActivateChild:[AuthGuard]*/},
 ];
 
 @NgModule({
