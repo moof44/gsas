@@ -1,50 +1,80 @@
+
 <mat-card>
     <mat-card-title>Client's Profile</mat-card-title>
     <mat-divider></mat-divider>
     <mat-card-content fxLayout="column" fxLayoutGap="3em" class="card-container">
-        <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutGap="3em">
+        <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutGap="3em" [formGroup] = "profileForm" >
             <div fxLayout="column" style="width: 100%;">
                 <mat-form-field appearance="fill">
-                    <mat-label>TIN No.:</mat-label>
-                    <input matInput placeholder="###-###-###-###">
-                </mat-form-field>
+                    <mat-label>TIN No.: </mat-label>
+                    <input matInput placeholder="###-###-###-###" formControlName="tinNo" mask="000-000-000-000"> 
+                    <mat-hint>Follow the pattern ###-###-###-###</mat-hint>
+                    <mat-error>Invalid pattern of Tin No.</mat-error>
+                </mat-form-field> 
                 <mat-form-field appearance="fill">
-                    <mat-label>Classification</mat-label>
-                    <mat-select>
+                    <mat-label>Classification</mat-label> 
+                    <mat-select formControlName="classification" (ngModelChange)="showClassificationInput(profileForm.value.classification)">
                         <mat-option value="individual">Individual</mat-option> 
                         <mat-option value="non-individual">Non-Individual</mat-option>
                     </mat-select>
+                    <mat-hint>Required *</mat-hint>
+                    <mat-error>Required *</mat-error>
                 </mat-form-field>
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="fill" *ngIf="classification=='non-individual'">
                     <mat-label>Business Name</mat-label>
-                    <input matInput placeholder="Name of the business">
+                    <input matInput placeholder="Name of the business" formControlName="businessName">
+                    <mat-error *ngIf="profileForm.value.classification=='non-individual' && !profileForm.value.businessName" >
+                        Required **
+                    </mat-error> 
                 </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Client's Name</mat-label>
-                    <input matInput placeholder="Surname, Firstname, Middlename">
-                    <mat-hint>Note: Must follow convention; Surname, Firstname, Middlename - separated by comma (,)</mat-hint>
+                <mat-form-field appearance="fill" *ngIf="classification=='individual'">
+                    <mat-label>Last Name</mat-label>
+                    <input type="text" matInput placeholder="Last name" formControlName="lastname">
+                    <mat-error 
+                        *ngIf="profileForm.value.classification=='individual' && !profileForm.value.lastname"
+                    >
+                        Required **
+                    </mat-error> 
                 </mat-form-field>
-                <mat-form-field appearance="fill">
+                <mat-form-field appearance="fill" *ngIf="classification=='individual'">
+                    <mat-label>First Name</mat-label>
+                    <input type="text" matInput placeholder="First name" formControlName="firstname">
+                    <mat-error 
+                        *ngIf="profileForm.value.classification=='individual' && !profileForm.value.firstname"
+                    >
+                        Required **
+                    </mat-error> 
+                </mat-form-field>
+                <mat-form-field appearance="fill" *ngIf="classification=='individual'">
+                    <mat-label>Middle Name</mat-label>
+                    <input type="text" matInput placeholder="Middle name">
+                </mat-form-field>
+                <mat-form-field appearance="fill" >
                     <mat-label>RDO Code</mat-label>
-                    <input matInput placeholder="RDO Code">
+                    <input matInput placeholder="RDO Code" formControlName="rdoCode">
+                    <mat-error>Required *</mat-error>
                 </mat-form-field>
             </div>
             <div fxLayout="column" fxLayout.lt-lg="column" style="width: 100%;">
                 <mat-form-field appearance="fill">
                     <mat-label>Street</mat-label>
-                    <input matInput placeholder="Input lot #, street, substreet, etc">
+                    <input matInput placeholder="Input lot #, street, substreet, etc" formControlName="street">
+                    <mat-error>Required *</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Barangay</mat-label>
-                    <input matInput placeholder="Input barangay, zone, etc">
+                    <input matInput placeholder="Input barangay, zone, etc" formControlName="barangay">
+                    <mat-error>Required *</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>City</mat-label>
-                    <input matInput placeholder="Input city">
+                    <input matInput placeholder="Input city" formControlName="city">
+                    <mat-error>Required *</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Province</mat-label>
-                    <input matInput placeholder="Input province">
+                    <input matInput placeholder="Input province" formControlName="province">
+                    <mat-error>Required *</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Zip Code</mat-label>
@@ -58,61 +88,11 @@
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Contact No.</mat-label>
-                    <input matInput placeholder="Input line of business">
+                    <input matInput placeholder="Inpuct Contact No.">
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Email</mat-label>
-                    <input matInput placeholder="Input line of business">
-                </mat-form-field>
-            </div>
-        </div>
-    </mat-card-content>
-</mat-card>
-<mat-card>
-    <mat-card-title>Secondary Information</mat-card-title>
-    <mat-divider></mat-divider>
-    <mat-card-content fxLayout="column" fxLayoutGap="3em" class="card-container">
-        <div fxLayout="row" fxLayout.lt-lg="column" fxLayoutGap="3em">
-            <div fxLayout="column" style="width: 100%;">
-                <mat-form-field appearance="fill">
-                    <mat-label>Philhealth No.</mat-label>
-                    <input matInput placeholder="Input Philhealth No.">
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Philhealth Business Name</mat-label>
-                    <input matInput placeholder="Input business name">
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Philhealth Business Address</mat-label>
-                    <input matInput placeholder="Input business address">
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" style="width: 100%;">
-                <mat-form-field appearance="fill">
-                    <mat-label>SSS No.</mat-label>
-                    <input matInput placeholder="Input SSS No.">
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>SSS Business Name</mat-label>
-                    <input matInput placeholder="Input business name">
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>SSS Business Address</mat-label>
-                    <input matInput placeholder="Input business address">
-                </mat-form-field>
-            </div>
-            <div fxLayout="column" style="width: 100%;">
-                <mat-form-field appearance="fill">
-                    <mat-label>Pag-ibig No.</mat-label>
-                    <input matInput placeholder="Input Pag-ibig No.">
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Pag-ibig Business Name</mat-label>
-                    <input matInput placeholder="Input business name">
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Pag-ibig Business Address</mat-label>
-                    <input matInput placeholder="Input business address">
+                    <input matInput placeholder="Input business email">
                 </mat-form-field>
             </div>
         </div>

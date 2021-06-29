@@ -17,6 +17,9 @@ import { environment } from 'src/environments/environment';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+//import { NgxMaskModule, IConfig } from 'ngx-mask'
+//export const options: Partial<IConfig> | (()=> Partial<IConfig>) | null = null ;
+
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AngularFirestoreModule,
     FormsModule,
     ReactiveFormsModule
+    //,NgxMaskModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

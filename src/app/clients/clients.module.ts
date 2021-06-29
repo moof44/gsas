@@ -12,6 +12,11 @@ import { CreateComponent } from './pages/create/create.component';
 import { ClientEmployeesTableComponent } from './tools/client-employees-table/client-employees-table.component';
 import { ClientEmployeesProfileComponent } from './tools/client-employees-profile/client-employees-profile.component';
 import { AddClientComponent } from './tools/minor-tools/add-client/add-client.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { SaveClientProfileComponent } from './tools/minor-tools/save-client-profile/save-client-profile.component';
+import { ClientSecondaryComponent } from './tools/client-secondary/client-secondary.component';
+export const options: Partial<IConfig> | (()=> Partial<IConfig>) | null = null ;
 
 
 @NgModule({
@@ -22,13 +27,16 @@ import { AddClientComponent } from './tools/minor-tools/add-client/add-client.co
     HomeComponent, 
     CreateComponent, 
     ClientEmployeesTableComponent, 
-    ClientEmployeesProfileComponent, AddClientComponent
+    ClientEmployeesProfileComponent, AddClientComponent, SaveClientProfileComponent, ClientSecondaryComponent
   ],
   imports: [
     CommonModule,
     ClientsRoutingModule,
     ClientMaterialModule,
     FlexLayoutModule
+    ,FormsModule
+    ,ReactiveFormsModule
+    ,NgxMaskModule.forRoot()
   ]
 })
 export class ClientsModule { }
